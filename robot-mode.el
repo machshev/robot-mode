@@ -52,7 +52,7 @@
     ))
 
 ;; (setq robot-program (concat (projectile-project-root) "tests/local-integration-test.sh"))
-(defvar robot-program "pybot"
+(defvar robot-program "robot"
   "Default robot program.")
 
 (defun robot-current-test ()
