@@ -1,3 +1,5 @@
+Updated to use `robot` as the defautl robot runner - `pybot` is no longer supported.
+
 Tried this first, but is unmaintained: https://github.com/sakari/robot-mode
 
 The bigger problem, I wasn't able to save a buffer in robot mode.
