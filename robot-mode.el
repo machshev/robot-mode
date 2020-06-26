@@ -72,7 +72,8 @@
   "Run robot-program FILE.
 NAME if given is used as the robot test name."
   (let ((cmd (concat robot-program
-                     (if robot-config-variable-file (concat " --variablefile '" robot-config-variable-file "'")) " "
+                     (if (not (string= "" robot-config-variable-file))
+                         (concat " --variablefile '" robot-config-variable-file "'")) " "
                      (if name (concat " -t '" name "'")) " "
                      file)))
     (compile cmd)))
