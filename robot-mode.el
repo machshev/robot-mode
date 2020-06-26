@@ -55,6 +55,9 @@
 (defvar robot-program "robot"
   "Default robot program.")
 
+(defvar robot-config-variable-file ""
+  "Default robot variable configuration file.")
+
 (defun robot-current-test ()
   "Find current robot test."
   (let (test-name)
@@ -68,7 +71,10 @@
 (defun robot-run (file &optional name)
   "Run robot-program FILE.
 NAME if given is used as the robot test name."
-  (let ((cmd (concat robot-program (if name (concat " -t '" name "'")) " " file)))
+  (let ((cmd (concat robot-program
+                     (if robot-config-variable-file (concat " --variablefile '" robot-config-variable-file "'")) " "
+                     (if name (concat " -t '" name "'")) " "
+                     file)))
     (compile cmd)))
 
 (defun robot-run-current-test ()
